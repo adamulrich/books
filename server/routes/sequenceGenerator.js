@@ -7,19 +7,21 @@ var sequenceId = null;
 function SequenceGenerator() {
 
   Sequence.findOne()
-    .exec(function(err, sequence) {
-      if (err) {
+    .then((sequence) => {
+        sequenceId = sequence._id;
+        maxBookId = sequence.maxBookId;
+        maxAuthorId = sequence.maxAuthorId;
+    }).catch(err => {
         return res.status(500).json({
           title: 'An error occurred',
           error: err
         });
-      }
-
-      sequenceId = sequence._id;
-      maxBookId = sequence.maxBookId;
-      maxAuthorId = sequence.maxAuthorId;
-    });
+    }
+    )
 }
+
+
+
 
 SequenceGenerator.prototype.nextId = function(collectionType) {
 
