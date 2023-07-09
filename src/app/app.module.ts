@@ -14,6 +14,7 @@ import { BookEditComponent } from './books/book-edit/book-edit.component';
 import { AuthorListComponent } from './authors/author-list/author-list.component';
 import { AuthorDetailComponent } from './authors/author-detail/author-detail.component';
 import { AuthorEditComponent } from './authors/author-edit/author-edit.component';
+import { AppRoutingModule } from './app-routing.module'
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { AuthorEditComponent } from './authors/author-edit/author-edit.component
     BookEditComponent,
     AuthorListComponent,
     AuthorDetailComponent,
-    AuthorEditComponent
+    AuthorEditComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -35,6 +37,7 @@ import { AuthorEditComponent } from './authors/author-edit/author-edit.component
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
