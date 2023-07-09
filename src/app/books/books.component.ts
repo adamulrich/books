@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Book } from './book.model'
 
 @Component({
   selector: 'app-books',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./books.component.css']
 })
 export class BooksComponent {
+  // selectedBook: Book = {};
 
+  ngOnInit(): void {
+    
+  }
+
+  constructor() {}
 }
