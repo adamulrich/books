@@ -20,9 +20,6 @@ function SequenceGenerator() {
     )
 }
 
-
-
-
 SequenceGenerator.prototype.nextId = function(collectionType) {
 
   var updateObject = {};
