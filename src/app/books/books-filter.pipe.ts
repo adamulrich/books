@@ -19,11 +19,11 @@ export class BooksFilterPipe implements PipeTransform {
                         book.series.toString().includes(term)
 
        );
+       return filteredBooks;
+    } else {
+      return books;
     }
-    if (filteredBooks.length < 1){
-       return books;
-    }
-    return filteredBooks;
+    
  }
 
 }

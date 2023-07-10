@@ -15,11 +15,10 @@ export class AuthorsFilterPipe implements PipeTransform {
           (author:Author) => author.name.toLowerCase().includes(term) 
 
        );
+       return filteredAuthors;
+    } else {
+      return authors;
     }
-    if (filteredAuthors.length < 1){
-       return authors;
-    }
-    return filteredAuthors;
  }
 
 }
