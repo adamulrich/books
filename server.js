@@ -12,11 +12,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const cors = require('cors');
 
-// import the routing file to handle the default (index) route
-// var index = require('./server/routes/app');
-
-// ... ADD CODE TO IMPORT YOUR ROUTING FILES HERE ... 
-
 var app = express(); // create an instance of express
 
 // Tell express to use the following parsers for POST data
@@ -43,25 +38,11 @@ app.use((req, res, next) => {
   );
   next();
 });
-// Tell express to use the specified director as the
-// root directory for your web site
-//app.use(express.static(path.join(__dirname, 'dist/books')));
-
-// Tell express to map the default route ('/') to the index route
-// app.use('/', index);
 
 // ... ADD YOUR CODE TO MAP YOUR URL'S TO ROUTING FILES HERE ...
 app.use('/books', bookRoutes);
 app.use('/authors', authorRoutes);
 
-
-// Tell express to map all other non-defined routes back to the index page
-app.use(function(req,res, next) {
-    res.render("index");
-})
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname, 'dist/cms/index.html'));
-// });
 
 // Define the port address and tell express to use this port
 const port = process.env.PORT || '3000';
