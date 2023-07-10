@@ -1,1 +1,62 @@
-<p>author-edit works!</p>
+<div class="panel panel-default">
+    <div class="panel-body">
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm" id="author-edit">
+        <input name='id' hidden [ngModel]="author.id" type="text" id="id" #authorId="ngModel">
+        <div class="row">
+          <div class="col-sm-12 form-group">
+            <label for="title">Name:</label>
+            <input
+              name="name"
+              [ngModel]="author.name"
+              type="text"
+              id="name"
+              required
+              class="form-control required"
+              size="120"
+              max="120"
+              #authorName="ngModel">
+          </div>
+        </div>
+        <div
+            *ngIf="!authorName.valid && authorName.touched">
+            <p class="alert alert-danger">Please enter a valid Title</p>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 form-group">
+            <label for="imageUrl">Image URL:</label>
+            <input
+              [ngModel]="author.imageUrl"
+              name="imageUrl"
+              type="text"
+              id="imageUrl"
+              class="form-control"
+              size="150"
+              max="255">
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 form-group">
+              <label for="bioUrl">Bio URL:</label>
+              <input
+                [ngModel]="author.bioUrl"
+                name="bioUrl"
+                type="text"
+                id="bioUrl"
+                class="form-control"
+                size="150"
+                max="255">
+            </div>
+          </div>
+  
+        <div class="row">
+          <div class="col-xs-12 btn-toolbar">
+            <button class="btn btn-success" type="submit"
+            [disabled]="!f.valid">Save</button>
+            <button class="btn btn-primary" type="button" (click)="onCancel()">Cancel</button>
+          </div>
+        </div>
+  
+      </form>
+    </div>
+  </div>
+  

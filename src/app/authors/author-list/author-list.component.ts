@@ -37,7 +37,7 @@ export class AuthorListComponent implements OnInit, OnDestroy{
   }
 
   search(value: string) {
-    this.term = value;
+    this.term = value.toLowerCase();
     
     }
   

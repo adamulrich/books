@@ -40,7 +40,7 @@ export class BookListComponent implements OnInit, OnDestroy{
   }
 
   search(value: string) {
-    this.term = value;
+    this.term = value.toLowerCase();
     
     }
   

@@ -97,7 +97,7 @@ export class AuthorService implements OnInit {
         }
 
         // make sure id of the new Author is empty
-        author.id = 0;
+        author.id = this.getMaxId() + 1;
 
         const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
@@ -153,7 +153,7 @@ export class AuthorService implements OnInit {
     //
     sortAndSend() {
         var authorsListClone = this.authors.slice();
-        authorsListClone.sort((a, b) => (a.name.toLowerCase() < b.name.toLowerCase()) ? 1 : (a.name.toLowerCase() > b.name.toLowerCase()) ? -1 : 0);
+        authorsListClone.sort((a, b) => (a.name.toLowerCase() > b.name.toLowerCase()) ? 1 : (a.name.toLowerCase() < b.name.toLowerCase()) ? -1 : 0);
         // emit the next contact list change event
         this.authorListChangedEvent.next(authorsListClone)
         return authorsListClone
