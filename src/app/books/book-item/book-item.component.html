@@ -1,0 +1,15 @@
+<a class="list-group-item clearfix bookDiv" routerLinkActive="active" [routerLink]="[book.id]">
+    <div class="row">
+        <div class="col-md-6">
+            <h4>{{book.title}}</h4>
+        </div>
+        <div class="col-md-6">
+            <h5>{{book.author["name"]}}</h5>
+
+            <!-- <span class="pull-right">
+            <img src="{{book.imageUrl}}" alt="{{ book.title }}" class="img-responsive" style="max-height: 100px;"
+                *ngIf="book.imageUrl">
+        </span> -->
+        </div>  
+    </div>
+</a>

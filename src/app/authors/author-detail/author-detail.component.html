@@ -1,1 +1,36 @@
-<p>author-detail works!</p>
+<div class="row">
+    <div class="panel panel-default">
+        <div class="col-xs-12 panel-heading">
+            <div class="row">
+                <h4 class="heading text-center"></h4>
+            </div>
+            <div class="col-md-6">
+                <img src="{{ author.imageUrl }}" 
+                alt="" 
+                class="img-responsive"
+                style="max-height: 300px;"
+                *ngIf="author.imageUrl">
+            </div>
+            <div class="col-md-6">
+                
+                    <div class="row">
+                        <div class="col-md-12" style="height: 50px">
+                            <button class="btn btn-primary pull-right" [routerLink]="['edit']">Edit</button>
+                        </div>  
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button class="btn btn-danger pull-right" (click)="onDelete()">Delete</button>
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-12 panel">
+                <h4>Name: <span class="text-primary">{{ author.name }}</span></h4>
+                <h4>Biography: <a href="{{author.bioUrl}}" > <span class="text-primary">{{ author.bioUrl }}</span></a></h4>
+            </div>
+        </div>
+    </div>
+</div>

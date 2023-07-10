@@ -1,1 +1,40 @@
-<p>book-detail works!</p>
+<div class="row">
+    <div class="panel panel-default">
+        <div class="col-xs-12 panel-heading">
+            <div class="row">
+                <h4 class="heading text-center"></h4>
+            </div>
+            <div class="col-md-6">
+                <img src="{{ book.imageUrl }}" 
+                alt="" 
+                class="img-responsive"
+                style="max-height: 300px;"
+                *ngIf="book.imageUrl">
+            </div>
+            <div class="col-md-6">
+                
+                    <div class="row">
+                        <div class="col-md-12" style="height: 50px">
+                            <button class="btn btn-primary pull-right" [routerLink]="['edit']">Edit</button>
+                        </div>  
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button class="btn btn-danger pull-right" (click)="onDelete()">Delete</button>
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-12 panel">
+                <h4>Author: <span class="text-primary">{{ book.author["name"] }}</span></h4>
+                <h4>Title: <span class="text-primary">{{ book.title }}</span></h4>
+                <h4>Subtitle: <span class="text-primary">{{ book.subTitle }}</span></h4>
+                <h4>Series: <span class="text-primary">{{ book.series }}</span></h4>
+                <h4>Published Year: <span class="text-primary">{{ book.year }}</span></h4>
+            </div>
+
+        </div>
+    </div>
+</div>

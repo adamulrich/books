@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Author } from './author.model'
 
 @Component({
   selector: 'app-authors',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./authors.component.css']
 })
 export class AuthorsComponent {
+  // selectedAuthor: Author = {};
 
+  ngOnInit(): void {
+    
+  }
+
+  constructor() {}
 }

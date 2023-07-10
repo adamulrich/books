@@ -1,1 +1,112 @@
-<p>book-edit works!</p>
+<div class="panel panel-default">
+    <div class="panel-body">
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm" id="book-edit">
+        <input name='id' hidden [ngModel]="book.id" type="text" id="id" #bookId="ngModel">
+        <div class="row">
+          <div class="col-sm-12 form-group">
+            <label for="title">Title:</label>
+            <input
+              name="title"
+              [ngModel]="book.title"
+              type="text"
+              id="name"
+              required
+              class="form-control required"
+              size="120"
+              max="120"
+              #bookTitle="ngModel">
+          </div>
+        </div>
+        <div
+            *ngIf="!bookTitle.valid && bookTitle.touched">
+            <p class="alert alert-danger">Please enter a valid Title</p>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 form-group">
+            <label for="title">Author:</label>          
+            <select [ngModel]="book.author['id']" #bookAuthor="ngModel" name='author' class='select-option form-control' required (ngModelChange)='onAuthorSelected($event)'
+        >
+                <option class='option' *ngFor='let author of authors' [value]="author.id" >{{author.name}} </option>>
+            </select>
+            </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-sm-12 form-group">
+            <label for="subTitle">SubTitle:</label>
+            <input
+              
+              [ngModel]="book.subTitle"
+              name="subTitle"
+              type="text"
+              id="subTitle"
+              class="form-control"
+              size="120"
+              max="255"
+              #bookSubTitle="ngModel">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 form-group">
+            <label for="series">Series:</label>
+            <input
+              [ngModel]="book.series"
+              name="series"
+              type="text"
+              id="series"
+              class="form-control"
+              size="150"
+              max="255"
+              #bookSeries="ngModel">
+          </div>
+        </div>     
+        <div class="row">
+            <div class="col-sm-12 form-group">
+              <label for="year">Year:</label>
+              <input
+                [ngModel]="book.year"
+                name="year"
+                type="text"
+                id="year"
+                class="form-control"
+                size="150"
+                max="255"
+                required
+                #bookSeries="ngModel">
+            </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 form-group">
+            <label for="imageUrl">Image URL:</label>
+            <input
+              [ngModel]="book.imageUrl"
+              name="imageUrl"
+              type="text"
+              id="imageUrl"
+              class="form-control"
+              size="150"
+              max="255">
+          </div>
+        </div>
+
+  
+        <div
+        *ngIf="(!bookTitle.valid && bookTitle.touched) ">
+          <p class="alert alert-danger">The Book Title and Author are required fields.</p>
+        </div>
+
+  
+        <div class="row">
+          <div class="col-xs-12 btn-toolbar">
+            <button class="btn btn-success" type="submit"
+            [disabled]="!f.valid">Save</button>
+            <button class="btn btn-primary" type="button" (click)="onCancel()">Cancel</button>
+          </div>
+        </div>
+  
+      </form>
+    </div>
+  </div>
+  

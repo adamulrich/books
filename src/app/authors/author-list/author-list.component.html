@@ -1,1 +1,28 @@
-<p>author-list works!</p>
+<div class="panel panel-default">
+    <div class="panel-heading">
+      <div class="row pad-left-right">
+        <span class="pull-left title">Authors</span>
+      </div>
+      <div class="row">
+        <div class="input-group pull-left pad-left-right col-xs-7">
+
+           <input class="form-control"  type="text" #searchBox (keyup)="search(searchBox.value)" placeholder="Enter a search value" />
+
+           <div class="glyphicon glyphicon-search input-group-addon" (click)="search(searchBox.value)"></div>
+        </div>
+
+        <a class="btn btn-success pull-right" routerLink="new">Add Author</a>
+      </div>
+    </div>
+    <div class="panel-body">
+      <div class="center-panel" style="overflow-y:auto; height:80vh">
+        <app-author-item
+        *ngFor="let authorElement of authors | authorsFilter:term"
+        [author]="authorElement"
+        >
+      </app-author-item>
+      </div>
+    </div>
+  
+  </div>
+  
