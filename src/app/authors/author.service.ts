@@ -156,6 +156,7 @@ export class AuthorService implements OnInit {
         authorsListClone.sort((a, b) => (a.name.toLowerCase() > b.name.toLowerCase()) ? 1 : (a.name.toLowerCase() < b.name.toLowerCase()) ? -1 : 0);
         // emit the next contact list change event
         this.authorListChangedEvent.next(authorsListClone)
+        this.authors = authorsListClone;
         return authorsListClone
     }
 
