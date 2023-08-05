@@ -1,7 +1,14 @@
 # Books
+This project was the final for BYU-I WDD430 (Full Stack Web Dev). The requirements were to build an Mongo Express Angular Node.js (MEAN) SPA with at least 1 angular component. I built a simple book database that has an authors model as well, and provides linking between authors and books. It provides full crud support for both. It uses express routing.
+
+## Components
+Mongo
+Mongoose
+Node.js
+Node.js Express
+Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.1.
-
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
